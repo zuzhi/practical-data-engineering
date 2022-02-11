@@ -31,3 +31,55 @@ To get MinIO, Spark, Kubernetes, etc. ready, check the representive folder in [h
 2. Kubernetes ready
 3. Spark image and role and namespaces ready
 4. cd `src/pipelines/real-estate` and start dagit with `dagit`
+
+### Start issue
+
+1. ImportError
+
+```
+ImportError: cannot import name 'SubscriptionObserver' from 'graphql_ws.gevent'
+```
+
+Manually install `graphql_ws` with version `0.3.1`.
+
+```sh
+pip install graphql_ws==0.3.1
+```
+
+
+2. dagster.check.CheckError
+
+```
+dagster.check.CheckError: Invariant failed. Description: Attempted to deserialize class "InstigatorState" which is not in the whitelist.
+```
+
+
+Use a clean dagster home.
+
+``` sh
+export DAGSTER_HOME="~/dagster-home-real-estate"
+```
+
+3. ModuleNotFoundError
+
+```
+ModuleNotFoundError: No module named 'bs4'
+```
+
+Install `bs4`
+
+``` sh
+pip install bs4
+```
+
+4. UserWarning
+
+```
+UserWarning: No dagster instance configuration file (dagster.yaml) found at /Users/zuzhi/dagster-home-real-estate.
+```
+
+Create an empty dagster.yaml file in /Users/zuzhi/dagster-home-real-estate.
+
+```sh
+touch ~/dagster-home-real-estate/dagster.yaml
+```
